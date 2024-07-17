@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://cdn.dribbble.com/users/1447183/screenshots/5699253/dribbble_canvas__credit_card_2_.gif"); /* Path to your locally saved image */
+            background-position: center center; /* Center the background image */
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto; /* Center the container vertically */
+            text-align: left; /* Center align content */
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            margin-top: 20px;
+        }
+        
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Approval Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="has_car">Has a car:</label>
+            <input type="number" id="has_car" name="has_car" min="0" max="1" required><br><br>
+            
+            <label for="has_property">Has a property:</label>
+            <input type="number" id="has_property" name="has_property" min="0" max="1" required><br><br>
+            
+            <label for="children_count">Children count:</label>
+            <input type="number" id="children_count" name="children_count" required><br><br>
+            
+            <label for="income">Income:</label>
+            <input type="number" id="income" name="income" required><br><br>
+            
+            <label for="dwelling">Dwelling:</label>
+            <select id="dwelling" name="dwelling" required>
+                <option value="0">Co-op apartment</option>
+                <option value="1">House/apartment</option>
+                <option value="2">Municipal apartment</option>
+                <option value="3">Office apartment</option>
+                <option value="4">Rented apartment</option>
+                <option value="5">With parents</option>
+            </select><br><br>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            
+            <label for="employment_length">Employment length:</label>
+            <input type="number" id="employment_length" name="employment_length" required><br><br>
+            
+            <label for="has_mobile_phone">Has a mobile phone:</label>
+            <input type="number" id="has_mobile_phone" name="has_mobile_phone" min="0" max="1" required><br><br>
+            
+            <label for="has_work_phone">Has a work phone:</label>
+            <input type="number" id="has_work_phone" name="has_work_phone" min="0" max="1" required><br><br>
+            
+            <label for="has_phone">Has a phone:</label>
+            <input type="number" id="has_phone" name="has_phone" min="0" max="1" required><br><br>
+            
+            <label for="has_email">Has an email:</label>
+            <input type="number" id="has_email" name="has_email" min="0" max="1" required><br><br>
+            
+            <label for="family_member_count">Family member count:</label>
+            <input type="number" id="family_member_count" name="family_member_count" required><br><br>
+            
+            <label for="account_age">Account age:</label>
+            <input type="number" id="account_age" name="account_age" required><br><br>
+            
+            <label for="total_phones">Total phones:</label>
+            <input type="number" id="total_phones" name="total_phones" required><br><br>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select><br><br>
+            
+            <label for="employment_status">Employment status:</label>
+            <select id="employment_status" name="employment_status" required>
+                <option value="0">Commercial associate</option>
+                <option value="1">Pensioner</option>
+                <option value="2">State servant</option>
+                <option value="3">Student</option>
+                <option value="4">Working</option>
+            </select><br><br>
+            
+            <label for="education_level">Education level:</label>
+            <select id="education_level" name="education_level" required>
+                <option value="0">Academic degree</option>
+                <option value="1">Higher education</option>
+                <option value="2">Incomplete higher</option>
+                <option value="3">Lower secondary</option>
+                <option value="4">Secondary/secondary special</option>
+            </select><br><br>
+            
+            <label for="marital_status">Marital status:</label>
+            <select id="marital_status" name="marital_status" required>
+                <option value="0">Single/not married</option>
+                <option value="1">Married</option>
+                <option value="2">Civil marriage</option>
+                <option value="3">Widow</option>
+                <option value="4">Separated</option>
+            </select><br><br>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
